@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'JAL - En Pleine Conscience | Site Officiel</title>
+    <meta name="description" content="Site officiel de D'JAL, humoriste. Découvrez son nouveau spectacle 'En Pleine Conscience', les dates de tournée et réservez vos billets.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="D'JAL - En Pleine Conscience">
+    <meta property="og:description" content="Le nouveau spectacle de D'JAL en tournée partout en France">
+    <meta property="og:image" content="assets/images/hero.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+    <header class="nav-wrapper" id="nav-wrapper">
+        <nav class="nav">
+            <a href="#" class="nav-logo">D'JAL</a>
+
+            <ul class="nav-menu">
+                <li><a href="#spectacle" class="nav-link">Spectacle</a></li>
+                <li><a href="#tournee" class="nav-link">Tournée</a></li>
+                <li><a href="#videos" class="nav-link">Vidéos</a></li>
+                <li><a href="#presse" class="nav-link">Presse</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="nav-socials">
+                    <a href="https://www.instagram.com/djalcomedy/" target="_blank" rel="noopener" aria-label="Instagram" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="https://www.tiktok.com/@djalcomedy" target="_blank" rel="noopener" aria-label="TikTok" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                    <a href="https://www.youtube.com/channel/UC-JAheTA7CU0R_WjbU1RfQA" target="_blank" rel="noopener" aria-label="YouTube" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://www.facebook.com/djalcomedy" target="_blank" rel="noopener" aria-label="Facebook" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://x.com/djalcomedy" target="_blank" rel="noopener" aria-label="X" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                </div>
+                <a href="#tournee" class="nav-cta">Billetterie</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="nav-mobile">
+        <div class="nav-mobile-content">
+            <a href="#spectacle" class="nav-mobile-link">Spectacle</a>
+            <a href="#tournee" class="nav-mobile-link">Tournée</a>
+            <a href="#videos" class="nav-mobile-link">Vidéos</a>
+            <a href="#presse" class="nav-mobile-link">Presse</a>
+            <a href="#contact" class="nav-mobile-link">Contact</a>
+            <div class="nav-mobile-socials">
+                <a href="https://www.instagram.com/djalcomedy/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                <a href="https://www.tiktok.com/@djalcomedy" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                <a href="https://www.youtube.com/channel/UC-JAheTA7CU0R_WjbU1RfQA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.facebook.com/djalcomedy" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://x.com/djalcomedy" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            </div>
+            <a href="#tournee" class="nav-mobile-cta">Billetterie</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- ========================================
+             HERO
+        ======================================== -->
+        <section class="hero" id="hero">
+            <div class="hero-visual">
+                <div class="hero-image"></div>
+                <div class="hero-gradient"></div>
+            </div>
+            <div class="hero-content">
+                <span class="hero-tour">Tournée 2025-2026</span>
+                <h1 class="hero-title">En Pleine<br>Conscience</h1>
+                <p class="hero-tagline">Le nouveau spectacle</p>
+                <a href="#tournee" class="hero-cta">
+                    <span>Réserver</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="hero-scroll">
+                <div class="hero-scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SPECTACLE (Présentation du show)
+        ======================================== -->
+        <section class="section section-spectacle" id="spectacle">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-tag">Le Spectacle</span>
+                    <h2 class="section-title">En Pleine Conscience</h2>
+                    <p class="section-subtitle">Un voyage hilarant au coeur de nos contradictions modernes</p>
+                </header>
+                <div class="spectacle-content">
+                    <!-- Contenu à ajouter -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             TOURNÉE (Dates et billetterie)
+        ======================================== -->
+        <section class="section section-tournee" id="tournee">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-tag">Tournée 2026</span>
+                    <h2 class="section-title">Prochaines Dates</h2>
+                    <p class="section-subtitle">Retrouvez D'JAL près de chez vous</p>
+                </header>
+                <div class="tournee-list">
+                    <!-- JANVIER -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">23</span><span class="month">Jan</span></div>
+                        <div class="tournee-info"><span class="venue">Carré des Docks</span><span class="city">Le Havre</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/587519" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item complet">
+                        <div class="tournee-date"><span class="day">24</span><span class="month">Jan</span></div>
+                        <div class="tournee-info"><span class="venue">Le K</span><span class="city">Reims</span></div>
+                        <span class="tournee-btn disabled">Complet</span>
+                    </div>
+                    <!-- FÉVRIER -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">06</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">Cepac Silo</span><span class="city">Marseille</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/603494" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">07</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">Zénith</span><span class="city">Toulon</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/612614" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item complet">
+                        <div class="tournee-date"><span class="day">13</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">Novotel Atria</span><span class="city">Nîmes</span></div>
+                        <span class="tournee-btn disabled">Complet</span>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">14</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">Patio de Camargue</span><span class="city">Arles</span></div>
+                        <a href="https://billetterie.webgazelle.net/sortir-d-jal-arles-arles-spectacle-humour,evenement-12893" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item complet">
+                        <div class="tournee-date"><span class="day">20</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">Salle G. Brassens</span><span class="city">Feytiat</span></div>
+                        <span class="tournee-btn disabled">Complet</span>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">24</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">L'Odyssée</span><span class="city">Périgueux</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/627638" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">28</span><span class="month">Fév</span></div>
+                        <div class="tournee-info"><span class="venue">Rockhal</span><span class="city">Esch-sur-Alzette</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/623629" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <!-- MARS -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">07</span><span class="month">Mar</span></div>
+                        <div class="tournee-info"><span class="venue">Les Ateliers Magiques</span><span class="city">Barbières</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/637232" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">14</span><span class="month">Mar</span></div>
+                        <div class="tournee-info"><span class="venue">Agen Agora</span><span class="city">Agen</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/609621" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">20</span><span class="month">Mar</span></div>
+                        <div class="tournee-info"><span class="venue">Pavillon les Bains</span><span class="city">Mers-les-Bains</span></div>
+                        <a href="https://ginger.trium.fr/fr/t/-/event/65254" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">26</span><span class="month">Mar</span></div>
+                        <div class="tournee-info"><span class="venue">Théâtre J. Prévert</span><span class="city">Aulnay-sous-Bois</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/624684" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item complet">
+                        <div class="tournee-date"><span class="day">28</span><span class="month">Mar</span></div>
+                        <div class="tournee-info"><span class="venue">Centre des Congrès</span><span class="city">Jonzac</span></div>
+                        <span class="tournee-btn disabled">Complet</span>
+                    </div>
+                    <!-- AVRIL -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">02</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Amphithéâtre</span><span class="city">Rodez</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/635697" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">03</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Narbonne Arena</span><span class="city">Narbonne</span></div>
+                        <a href="https://billetterie.narbonne-arena.fr/fr/product/476/snc_narbonne_arena/d_jal" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">04</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Salle des Marinières</span><span class="city">Porcieu-Amblagnieu</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/616931" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">08</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Théâtre de Yerres</span><span class="city">Yerres</span></div>
+                        <a href="https://www.francebillet.com/event/djal-en-pleine-conscience-tournee-theatre-de-yerres-cec-yerres-20286836/" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">10</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Zénith</span><span class="city">Caen</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/587525" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">11</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">L'Escale</span><span class="city">Melun</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/625249" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">17</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Salle Guy Obino</span><span class="city">Vitrolles</span></div>
+                        <a href="https://www.billetweb.fr/djal-vitrolles" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">18</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Palais des Congrès</span><span class="city">Digne-les-Bains</span></div>
+                        <a href="https://www.billetweb.fr/djal-digne-les-bains" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">21</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Théâtre des Allobroges</span><span class="city">Cluses</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/645586" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">24</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Auxerrexpo</span><span class="city">Auxerre</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/636406" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">25</span><span class="month">Avr</span></div>
+                        <div class="tournee-info"><span class="venue">Le Manège</span><span class="city">Vienne</span></div>
+                        <a href="https://www.billetweb.fr/djal-vienne2" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <!-- JUIN -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">06</span><span class="month">Juin</span></div>
+                        <div class="tournee-info"><span class="venue">Cité des Congrès</span><span class="city">Nantes</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/614833" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">13</span><span class="month">Juin</span></div>
+                        <div class="tournee-info"><span class="venue">Casino Méditerranée</span><span class="city">Nice</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/621818" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">19</span><span class="month">Juin</span></div>
+                        <div class="tournee-info"><span class="venue">PBA Grande Salle</span><span class="city">Charleroi</span></div>
+                        <a href="https://www.pba.be/spectacle/djal-en-pleine-conscience/" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <!-- OCTOBRE -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">03</span><span class="month">Oct</span></div>
+                        <div class="tournee-info"><span class="venue">Espace J-J. Robert</span><span class="city">Mennecy</span></div>
+                        <a href="https://www.francebillet.com/event/djal-en-pleine-conscience-tournee-espace-culturel-jean-jacques-robert-mennecy-20235520/" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item featured">
+                        <div class="tournee-date"><span class="day">30</span><span class="month">Oct</span></div>
+                        <div class="tournee-info"><span class="venue">Le Grand Rex</span><span class="city">Paris</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/621841" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item featured">
+                        <div class="tournee-date"><span class="day">31</span><span class="month">Oct</span></div>
+                        <div class="tournee-info"><span class="venue">Le Grand Rex</span><span class="city">Paris</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/621841" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <!-- NOVEMBRE -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">06</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Palais des Congrès</span><span class="city">Perpignan</span></div>
+                        <a href="https://www.fnactickets.com/ticket-evenement/one-man-woman-show-d-jal-manpedja-lt.htm" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">07</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Le Scarabée</span><span class="city">Riorges</span></div>
+                        <a href="https://www.ticketmaster.fr/en/manifestation/d-jal-ticket/idmanif/636482" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">13</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Le Cadran</span><span class="city">Évreux</span></div>
+                        <a href="https://www.francebillet.com/event/djal-en-pleine-conscience-tournee-le-cadran-le-tangram-20256106/" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">14</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Zénith</span><span class="city">Orléans</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/617521" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">19</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Arcadium</span><span class="city">Annecy</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/613040" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">20</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Parc des Expositions</span><span class="city">Bourg-en-Bresse</span></div>
+                        <a href="https://www.fnacspectacles.com/event/djal-en-pleine-conscience-tournee-ainterexpo-bourg-en-bresse-20662683/" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">21</span><span class="month">Nov</span></div>
+                        <div class="tournee-info"><span class="venue">Le Summum</span><span class="city">Grenoble</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/616067" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <!-- DÉCEMBRE -->
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">10</span><span class="month">Déc</span></div>
+                        <div class="tournee-info"><span class="venue">Gare du Midi</span><span class="city">Biarritz</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/626687" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">12</span><span class="month">Déc</span></div>
+                        <div class="tournee-info"><span class="venue">Les Arènes</span><span class="city">Évry-Courcouronnes</span></div>
+                        <a href="https://stardust-spectacles.trium.fr/fr/t/-/event/63784" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                    <div class="tournee-item">
+                        <div class="tournee-date"><span class="day">18</span><span class="month">Déc</span></div>
+                        <div class="tournee-info"><span class="venue">Bourse du Travail</span><span class="city">Lyon</span></div>
+                        <a href="https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/625740" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             VIDÉOS (Extraits et contenu)
+        ======================================== -->
+        <section class="section section-videos" id="videos">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-tag">Vidéos</span>
+                    <h2 class="section-title">Extraits & Best Of</h2>
+                    <p class="section-subtitle">Découvrez D'JAL en action</p>
+                </header>
+                <div class="videos-grid">
+                    <!-- Vidéos à ajouter -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PRESSE (Revue de presse)
+        ======================================== -->
+        <section class="section section-presse" id="presse">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-tag">Presse</span>
+                    <h2 class="section-title">Ils parlent de lui</h2>
+                    <p class="section-subtitle">Ce que les médias en disent</p>
+                </header>
+                <div class="presse-carousel">
+                    <!-- Citations presse à ajouter -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             CONTACT (Newsletter et infos)
+        ======================================== -->
+        <section class="section section-contact" id="contact">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-tag">Contact</span>
+                    <h2 class="section-title">Restez connectés</h2>
+                    <p class="section-subtitle">Ne manquez aucune actualité</p>
+                </header>
+                <div class="contact-content">
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Votre adresse email" required>
+                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </form>
+                    <div class="contact-info">
+                        <!-- Infos contact à ajouter -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">D'JAL</a>
+                    <p class="footer-tagline">Humoriste</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#spectacle">Spectacle</a>
+                    <a href="#tournee">Tournée</a>
+                    <a href="#videos">Vidéos</a>
+                    <a href="#presse">Presse</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/djalcomedy/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.tiktok.com/@djalcomedy" target="_blank" rel="noopener">TikTok</a>
+                    <a href="https://www.youtube.com/channel/UC-JAheTA7CU0R_WjbU1RfQA" target="_blank" rel="noopener">YouTube</a>
+                    <a href="https://www.facebook.com/djalcomedy" target="_blank" rel="noopener">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 D'JAL - Tous droits réservés</p>
+                <p>Production : <a href="#">La Tiny Team</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/js/main.js"></script>
+</body>
+</html>

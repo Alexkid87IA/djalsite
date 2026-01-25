@@ -1,0 +1,45 @@
+/* ============================================
+   SECTIONS (Common)
+============================================ */
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: var(--gray-600);
+    border: 1px solid var(--gray-500);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--pink);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-200);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Section backgrounds */
+.section-spectacle { background: var(--dark); }
+.section-tournee { background: var(--darker); }
+.section-videos { background: var(--dark); }
+.section-presse { background: var(--darker); }
+.section-contact { background: var(--dark); }

@@ -11,7 +11,15 @@
 @import 'components/_buttons.css';
 @import 'components/_nav.css';
 @import 'components/_hero.css';
+@import 'components/_spectacle.css';
 @import 'components/_tournee.css';
+@import 'components/_videos.css';
+@import 'components/_cinema.css';
+@import 'components/_presse.css';
+@import 'components/_livredor.css';
+@import 'components/_instagram.css';
+@import 'components/_reels.css';
+@import 'components/_contact.css';
 
 /* Layout */
 @import 'layout/_sections.css';

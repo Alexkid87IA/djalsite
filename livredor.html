@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livre d'or - D'JAL</title>
+    <meta name="description" content="Tous les messages des spectateurs de D'JAL">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <style>
+        .page-header {
+            padding: 150px 0 60px;
+            background: var(--darker);
+            text-align: center;
+        }
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-300);
+        }
+        .livredor-page {
+            background: var(--dark);
+            padding: 60px 0;
+        }
+        .livredor-page .livredor-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .livredor-page .livredor-item:nth-child(n) {
+            grid-column: auto;
+            max-width: none;
+            justify-self: auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--pink);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: var(--light);
+        }
+        @media (max-width: 1024px) {
+            .livredor-page .livredor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .livredor-page .livredor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation simple -->
+    <header class="nav-wrapper scrolled">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo"><img src="src/assets/images/logo.png" alt="D'JAL"></a>
+            <a href="index.html" class="nav-cta">Retour au site</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <a href="index.html" class="back-link">← Retour</a>
+                <h1 class="page-title">Livre d'or</h1>
+                <p class="page-subtitle">Tous vos messages après le spectacle</p>
+            </div>
+        </section>
+
+        <section class="livredor-page">
+            <div class="container">
+                <div class="livredor-grid">
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Hier soir, superbe soirée, 2h d'éclate total. Merci de nous faire oublier la morosité du quotidien, tout en clashant avec justesse. MERCI, pour cette joie que tu partages, ce n'est que du BONHEUR !!!!"</p>
+                        <div class="livredor-author"><span class="livredor-name">Fred</span><span class="livredor-date">17/12/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Super soirée hier au théâtre de Longjumeau, pleine de rires et d'émotions. Merci D'jal de nous avoir fait oublier pendant 2 heures la morosité du quotidien. Vos spectacles devraient être remboursés par la Sécu."</p>
+                        <div class="livredor-author"><span class="livredor-name">Carole</span><span class="livredor-date">16/12/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Hier soir à Bourg Les Valence je n'ai pas souvenir d'avoir autant ri pendant 2h15, vraiment que du pur bonheur, moments de tendresse et moments de pure délire, on a kiffé à mort…"</p>
+                        <div class="livredor-author"><span class="livredor-name">Jef et Gisele</span><span class="livredor-date">03/12/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Hier soir à Lyon un show à mourir de rire. Avec un moment de partage de tendresse et d'émotion cela fait un bien fou. Merci pour ces 2h30 de larmes."</p>
+                        <div class="livredor-author"><span class="livredor-name">Nathalie et Patrick</span><span class="livredor-date">23/11/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Magnifique spectacle j'en ai pleuré de rire tellement des barres de rire 🤣 à voir et à revoir. UN GRAND BRAVO. Humour bonne humeur sans discrimination."</p>
+                        <div class="livredor-author"><span class="livredor-name">Laura et Bernard</span><span class="livredor-date">11/11/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Merci pour ce moment passé à Liège. J'ai beaucoup ri. J'ai aussi ressenti beaucoup d'émotions grâce à votre partage. Je vais essayer de profiter de la vie avec pleine conscience."</p>
+                        <div class="livredor-author"><span class="livredor-name">Christelle</span><span class="livredor-date">24/05/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"C'est Cindy la manouche. Merci D'jal j'ai jamais autant rigolé j'arrive plus à respirer. Merci merci"</p>
+                        <div class="livredor-author"><span class="livredor-name">Cindy</span><span class="livredor-date">09/04/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Ce soir c'était : ici c'est Strasbourg ! Un grand bravo à ce petit bonhomme au cœur de géant ! J'avais les larmes aux yeux durant tout le spectacle."</p>
+                        <div class="livredor-author"><span class="livredor-name">Fredo</span><span class="livredor-date">06/04/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Un grand merci pour ce merveilleux moment de rire aux larmes à Monthou sur Bièvre. Ça fait tellement du bien au moral et au corps. On peut rire de tout avec auto-dérision et tendresse."</p>
+                        <div class="livredor-author"><span class="livredor-name">Ghislaine et Bruno</span><span class="livredor-date">16/03/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Un très grand merci pour cette représentation à Nantes, magnifique tu es, drôle tu es. Grâce à toi j'ai pu oublier mes problèmes et rigoler à en pleurer."</p>
+                        <div class="livredor-author"><span class="livredor-name">Olivier</span><span class="livredor-date">03/02/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Je n'ai jamais écrit à un artiste de ma vie, mais ton spectacle m'a tellement fait passer du rire aux larmes que je me devais de prendre la plume! Quelle belle âme !"</p>
+                        <div class="livredor-author"><span class="livredor-name">Anthony Roudriguech</span><span class="livredor-date">31/01/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Tu as mis le feu à Casablanca. Excellente performance, sur mesure. Spectacle hilarant, plein d'énergie positive et une pointe d'émotion partagée avec le public."</p>
+                        <div class="livredor-author"><span class="livredor-name">ATD</span><span class="livredor-date">07/01/2023</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Merci pour cet énorme bonheur à Marseille. Trop fort, l'expression mort de rire prend tout son sens grâce à toi. Merci aussi pour ta générosité et bienveillance."</p>
+                        <div class="livredor-author"><span class="livredor-name">Sonia</span><span class="livredor-date">20/12/2022</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Halala D'jal soirée mémorable à Nancy. Et ces 5mn sur scène avec toi seront inoubliables. Ne change rien on t'aime, superbe spectacle Amour et Humour"</p>
+                        <div class="livredor-author"><span class="livredor-name">Melanie</span><span class="livredor-date">15/06/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Depuis ton passage à Marseille on partage avec les amis, collègues, la soirée d'éclate total qu'on a passé avec toi. Tu es vraiment très drôle et pour moi de loin celui qui m'a fait le plus rire."</p>
+                        <div class="livredor-author"><span class="livredor-name">Sabrina</span><span class="livredor-date">27/05/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Un grand merci pour tous ces fous rires et toutes ces émotions ressenties à la Bourse du Travail à Lyon. Un grand spectacle, un grand humoriste et une très belle personne."</p>
+                        <div class="livredor-author"><span class="livredor-name">Fahima</span><span class="livredor-date">27/04/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Merci beaucoup pour ces 1h30 de pur bonheur à Roissy en France, des fous rires à n'en plus finir, des émotions et beaucoup de respect et d'amour."</p>
+                        <div class="livredor-author"><span class="livredor-name">Lydie</span><span class="livredor-date">20/04/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Superbe spectacle à Boisseuil où j'ai autant ri que pleuré, je m'attendais à autant d'humour mais pas à autant d'amour! Merci D'Jal de véhiculer la paix."</p>
+                        <div class="livredor-author"><span class="livredor-name">Gaëlle</span><span class="livredor-date">12/04/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Comment ne pas rire. Spectacle où les larmes coulent de bonheur. D'Jal nous fait passer un message avant tout… aimons-nous les uns les autres, tolérance et profitez de la vie."</p>
+                        <div class="livredor-author"><span class="livredor-name">Stéphanie</span><span class="livredor-date">16/02/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"D'jal tu m'as fait pleurer de rire et d'émotions ! Ton spectacle à cœur ouvert est une pépite. Merci à toi, ne change rien, et je t'aime D'jal!"</p>
+                        <div class="livredor-author"><span class="livredor-name">Sandra</span><span class="livredor-date">16/02/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Quel bonheur de voir autant de gentillesse, de tolérance, d'intelligence culturelle. Beaucoup de fous rires, quelques belles larmes. Tu es un grand Homme."</p>
+                        <div class="livredor-author"><span class="livredor-name">Sabrina la gitane</span><span class="livredor-date">26/01/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Je sors tout juste du spectacle « À cœur ouvert » tu es fabuleux D'Jal ne change surtout pas ! Je te suis depuis tes débuts sur scène et je continue d'aimer encore et encore."</p>
+                        <div class="livredor-author"><span class="livredor-name">Marine M</span><span class="livredor-date">19/01/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Mortel!!! Bravo D'jal!!! On pleure de rire… on pleure tout court… puis on repleure de rire… t'es un roi! Un artiste! Merci pour cette soirée."</p>
+                        <div class="livredor-author"><span class="livredor-name">Zoya</span><span class="livredor-date">18/01/2019</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Un très bon moment passé au Théâtre Trévise. On a eu le plaisir de te voir pour une petite photo après le spectacle. En plus d'un spectacle super tu es quelqu'un d'adorable."</p>
+                        <div class="livredor-author"><span class="livredor-name">Aurélie et Marco</span><span class="livredor-date">28/12/2018</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Hier soir sur France 4, je découvre un humoriste hors normes! Le Rire Sans Frontière est garanti. Merci beaucoup D'jal pour tout ce que tu fais."</p>
+                        <div class="livredor-author"><span class="livredor-name">Maminette</span><span class="livredor-date">12/11/2018</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Quel Spectacle ! Merci pour ce moment de pur bonheur ! On s'est réellement régalé et tu nous as touché ! Quelle présence et quel rythme !"</p>
+                        <div class="livredor-author"><span class="livredor-name">Alex et Sophie</span><span class="livredor-date">31/10/2018</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Grande découverte ce soir sur France 4 car j'ai beaucoup ri. Bravo. Vous avez beaucoup de talent. Continuez à nous faire rire…"</p>
+                        <div class="livredor-author"><span class="livredor-name">Marc</span><span class="livredor-date">01/11/2017</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Un talent fou. J'ai découvert un humoriste qui donne tout et qui joue avec ses tripes. On rigole non-stop pendant tout le spectacle."</p>
+                        <div class="livredor-author"><span class="livredor-name">Christina</span><span class="livredor-date">21/10/2017</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Quelle belle découverte qui sort de l'humour bashing. Merci de nous montrer, sans être méchant, nos accents… t'es au top D'jal."</p>
+                        <div class="livredor-author"><span class="livredor-name">Daniel</span><span class="livredor-date">16/10/2017</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Un humour incisif tonitruant, à peine méchant, une imagination de dingue, des imitations folles, des paroles qui touchent même dans le mélo. Chapeau!"</p>
+                        <div class="livredor-author"><span class="livredor-name">Michel</span><span class="livredor-date">10/10/2017</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Ce soir sur F4 et à l'improviste, j'ai découvert un humour capable avec intelligence de me faire rire aux larmes. On peut vivre ensemble dans la diversité."</p>
+                        <div class="livredor-author"><span class="livredor-name">Farouk</span><span class="livredor-date">09/10/2017</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Une soirée particulière à Arlon en Belgique. Merci de nous avoir fait rire en ce jour dramatique pour notre pays. Pendant deux heures, nous avons oublié la barbarie."</p>
+                        <div class="livredor-author"><span class="livredor-name">Sylvia</span><span class="livredor-date">22/03/2016</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Merci D'jal ! 2 heures non stop à rigoler. Tu es énorme carallo !!! Un humour plein de peps, décapant et multi culturel."</p>
+                        <div class="livredor-author"><span class="livredor-name">Marie</span><span class="livredor-date">18/03/2016</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Je tenais à vous dire que votre spectacle est génial! Une heure et demie de rire sans interruption. Un grand merci pour cet excellent moment!"</p>
+                        <div class="livredor-author"><span class="livredor-name">Nadine 68</span><span class="livredor-date">23/01/2016</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Bravo nous avons été pliés de rire du début à la fin l'autre soir à Longjumeau ! Un spectacle généreux, courageux qui nous rappelle qu'il est bon de rire de tout et tous ensemble !"</p>
+                        <div class="livredor-author"><span class="livredor-name">Agnès</span><span class="livredor-date">17/12/2015</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"Super soirée en famille hier soir, merci on a passé un excellent moment. On vous attend au Théâtre de L'Eden à La Ciotat."</p>
+                        <div class="livredor-author"><span class="livredor-name">Gab le craneur</span><span class="livredor-date">07/02/2015</span></div>
+                    </div>
+                    <div class="livredor-item">
+                        <p class="livredor-text">"D'Jal, t'es pas humain ! Hier soir, au Trévise, c'est un tsunami que j'ai vu. Tu devrais être remboursé par la sécu !!!"</p>
+                        <div class="livredor-author"><span class="livredor-name">Pascal</span><span class="livredor-date">03/04/2014</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer simple -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="flex-direction: row; justify-content: center;">
+                <p>&copy; 2025 D'JAL - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

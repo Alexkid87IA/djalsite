@@ -1,0 +1,143 @@
+/* ============================================
+   SPECTACLE
+============================================ */
+.section-spectacle {
+    background: #000;
+    overflow: hidden;
+    padding: 0;
+}
+
+.section-spectacle .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.spectacle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.spectacle-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 6rem 8%;
+    background: #000;
+}
+
+.spectacle-content .section-tag {
+    align-self: flex-start;
+}
+
+.spectacle-content .section-title {
+    margin-bottom: 0;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.spectacle-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--gray-200);
+}
+
+.spectacle-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--gray-300);
+}
+
+.spectacle-text strong {
+    color: var(--pink);
+    font-weight: 700;
+}
+
+.spectacle-pitch {
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--pink);
+    padding: 1.5rem 2rem;
+    margin: 0.5rem 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.spectacle-pitch h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+.spectacle-pitch p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--gray-300);
+    margin-bottom: 0.75rem;
+}
+
+.spectacle-pitch p:last-child {
+    margin-bottom: 0;
+}
+
+.spectacle-mention {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.spectacle-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.spectacle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .spectacle-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .spectacle-image {
+        order: -1;
+        height: 60vh;
+    }
+
+    .spectacle-content {
+        padding: 4rem 6%;
+        text-align: center;
+    }
+
+    .spectacle-content .section-tag {
+        align-self: center;
+    }
+
+    .spectacle-pitch {
+        border-left: none;
+        border-top: 3px solid var(--pink);
+        border-radius: 0 0 12px 12px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .spectacle-image {
+        height: 50vh;
+    }
+
+    .spectacle-content {
+        padding: 3rem 5%;
+    }
+}

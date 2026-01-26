@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie - D'JAL</title>
+    <meta name="description" content="Découvrez l'histoire de D'JAL, humoriste au parcours unique et au talent reconnu.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <style>
+        .page-header {
+            padding: 150px 0 60px;
+            background: var(--darker);
+            text-align: center;
+        }
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-300);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--pink);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: var(--light);
+        }
+
+        /* Bio Section */
+        .bio-section {
+            background: var(--dark);
+            padding: 80px 0;
+        }
+        .bio-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .bio-hero {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+        .bio-image {
+            position: sticky;
+            top: 100px;
+        }
+        .bio-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+        .bio-intro {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: var(--gray-200);
+            font-weight: 500;
+        }
+        .bio-content {
+            max-width: 750px;
+        }
+        .bio-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+        }
+        .bio-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-weight: 800;
+            float: left;
+            line-height: 1;
+            margin-right: 0.75rem;
+            margin-top: 0.1rem;
+            color: var(--pink);
+        }
+        .bio-highlight {
+            background: rgba(233,30,140,0.1);
+            border-left: 4px solid var(--pink);
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .bio-highlight p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gray-200);
+            margin-bottom: 0;
+        }
+        .bio-quote {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+        .bio-quote p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--light);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .bio-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .bio-image {
+                position: relative;
+                top: 0;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 600px) {
+            .bio-section {
+                padding: 40px 0;
+            }
+            .bio-intro {
+                font-size: 1.2rem;
+            }
+            .bio-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation simple -->
+    <header class="nav-wrapper scrolled">
+        <nav class="nav">
+            <a href="index.html" class="nav-logo"><img src="src/assets/images/logo.png" alt="D'JAL"></a>
+            <a href="index.html#tournee" class="nav-cta">Billetterie</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <a href="index.html" class="back-link">← Retour</a>
+                <h1 class="page-title">Biographie</h1>
+                <p class="page-subtitle">L'histoire d'un humoriste pas comme les autres</p>
+            </div>
+        </section>
+
+        <section class="bio-section">
+            <div class="container">
+                <div class="bio-container">
+                    <div class="bio-hero">
+                        <div class="bio-image">
+                            <img src="src/assets/images/djal-portrait.webp" alt="D'JAL">
+                        </div>
+                        <p class="bio-intro">Aussi loin qu'il s'en souvienne, D'jal a toujours été heureux et servi par une imagination débordante, le tout couplé à un vrai sens du partage… Normal quand on est l'aîné d'une fratrie de 7 enfants !</p>
+                    </div>
+
+                    <div class="bio-content">
+                        <p>À l'adolescence, le jeune homme se découvre une passion pour le cinéma grâce à une voisine qui lui fournit des quantités astronomiques de vidéocassettes. Des blockbusters aux films d'auteurs, il assure la promotion de ses coups de cœurs auprès de tout le quartier de sa banlieue parisienne, qui écoute dévotement les conseils de ce Pierre Tchernia de proximité. C'est aussi le début des premières sorties, des premiers kifs, des premiers drames. Faire le malin devient un kit de survie à usages multiples, qu'il s'agisse d'encaisser les taloches d'un père qui châtie trop à force d'aimer, d'embrasser la plus jolie fille du collège, d'apprivoiser les profs, d'honorer ceux qui sont partis trop tôt…</p>
+
+                        <p>De petit boulot en petit boulot, D'jal atterrit dans un centre d'aide aux myopathes. Il s'attache à ces jeunes adultes dont il voit la vie s'écouler inéluctablement et les vanne sans vergogne parce qu'il sait comme il est bon de rire aux éclats même quand le souffle vous manque. D'jal noue une véritable amitié avec Lassana, un grand gaillard taciturne cloué dans son fauteuil roulant, que la maladie emportera trop vite.</p>
+
+                        <div class="bio-highlight">
+                            <p>S'il s'est pris pas mal de coups de pompes au derrière, c'est son premier coup de pompe à l'âme.</p>
+                        </div>
+
+                        <p>D'jal décide d'aller au bout de ses rêves, car la vie est courte. Et tout s'enchaine comme une évidence.</p>
+
+                        <p>Celui dont le rêve de gosse était de devenir réalisateur découvre que la prestigieuse école de cinéma Louis Lumière se situe juste en face du foyer dans lequel il travaille depuis trois ans. Armé de son bagout, d'humour et d'une passion communicative, il réussit à mobiliser toute une équipe d'étudiants en cinéma et à monter des fonds afin de réaliser un court-métrage dont il rédige le scénario en une semaine.</p>
+
+                        <p>D'jal prend alors conscience de sa capacité à raconter des histoires de façon drôle et décalée, se prend au jeu d'écrire des vannes n'importe où et n'importe quand, et l'idée de monter sur scène s'impose peu à peu dans son esprit. Il convainc alors le maire de sa ville de lui prêter les clés du théâtre municipal.</p>
+
+                        <p>Écrire, se mettre en scène, répéter, rythme son quotidien pendant des mois. Puis c'est la première représentation devant les amis et la famille, un succès, le début du bouche-à-oreilles, et les représentations s'enchainent…</p>
+
+                        <div class="bio-quote">
+                            <p>"D'jal décide d'aller au bout de ses rêves, car la vie est courte."</p>
+                        </div>
+
+                        <p>En parallèle, D'jal court les scènes ouvertes, il impose son style et son personnage déjà culte du "Portugais" (plus de 20 millions de vues !), avant d'exploser au Jamel Comedy Club. Puis il enchaine les représentations dans le monde entier : il tourne au Maghreb, en Afrique Noire (Maroc, Tunisie, Algérie, Liban, Sénégal, Mali, Niger, Côte d'Ivoire…), mais aussi à Londres avant de revenir en France.</p>
+
+                        <p>Avec pour spécificité d'écrire et de proposer à chaque fois un spectacle unique, sur mesure, pour le public du pays qui le reçoit. Ce goût du défi de conquérir un auditoire à la culture différente, allié au plaisir de l'écriture, et à sa volonté de partager sa joie de vivre, son énergie débordante et son humour malicieux, font de D'jal un humoriste à part.</p>
+
+                        <div class="bio-highlight">
+                            <p>Aujourd'hui, après une tournée mondiale à guichets fermés — Trévise, Olympia, Alhambra, Casino de Paris — D'JAL repart sur les routes avec son nouveau spectacle "En Pleine Conscience".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer simple -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 D'JAL - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

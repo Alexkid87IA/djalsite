@@ -1,0 +1,42 @@
+/* ============================================
+   PRESSE
+============================================ */
+.section-presse {
+    background: var(--dark);
+}
+
+.presse-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.presse-video {
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem;
+    transition: all 0.4s ease;
+}
+
+.presse-video:hover {
+    border-color: rgba(233,30,140,0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(233,30,140,0.1);
+}
+
+.presse-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.presse-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

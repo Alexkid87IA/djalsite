@@ -45,6 +45,15 @@
         return sameMonth ? `${joined} ${parts[0].month}` : joined;
     }
 
+    // Ligne « Et aussi » du héros : premières dates featured, hors salle de la prochaine date
+    function featuredLine(upcoming) {
+        const next = upcoming[0];
+        const group = groupFeatured(upcoming).find(g => !(next && g.venue === next.venue && g.city === next.city));
+        if (!group) return null;
+        const article = group.dates.length > 1 ? 'les' : 'le';
+        return { venue: group.venue, city: group.city, when: `${article} ${formatDays(group.dates)}` };
+    }
+
     function renderTourRow(item) {
         const classes = ['tour-row'];
         if (item.featured) classes.push('is-featured');
@@ -62,7 +71,7 @@
             </div>`;
     }
 
-    const api = { MONTHS, toISODate, getUpcomingDates, groupFeatured, formatDays, renderTourRow };
+    const api = { MONTHS, toISODate, getUpcomingDates, groupFeatured, formatDays, featuredLine, renderTourRow };
 
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = api;

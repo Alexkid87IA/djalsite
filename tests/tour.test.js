@@ -75,3 +75,27 @@ test('renderTourRow complet : pas de lien, libellé Complet', () => {
     assert.match(html, /Complet/);
     assert.doesNotMatch(html, /<a /);
 });
+
+const { featuredLine } = require('../src/js/tour.js');
+
+test('featuredLine annonce les dates featured quand la prochaine date est ailleurs', () => {
+    const upcoming = getUpcomingDates(sample, new Date(2026, 9, 1));
+    assert.deepEqual(featuredLine(upcoming), { venue: 'Le Grand Rex', city: 'Paris', when: 'les 30 & 31 octobre' });
+});
+
+test('featuredLine ne répète pas la salle de la prochaine date', () => {
+    const upcoming = getUpcomingDates(sample, new Date(2026, 9, 4));
+    assert.equal(featuredLine(upcoming), null);
+});
+
+test('featuredLine utilise « le » pour une seule date', () => {
+    const upcoming = [
+        sample[2],
+        { date: '2026-11-06', day: '06', month: 'Nov', venue: 'Zénith', city: 'Lille', url: 'https://lille.test', featured: true }
+    ];
+    assert.deepEqual(featuredLine(upcoming), { venue: 'Zénith', city: 'Lille', when: 'le 6 novembre' });
+});
+
+test('featuredLine renvoie null sans date featured', () => {
+    assert.equal(featuredLine([sample[2]]), null);
+});

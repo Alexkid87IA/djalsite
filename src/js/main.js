@@ -3,7 +3,25 @@
    Main JavaScript (nécessite tour.js avant)
 ============================================ */
 
-document.documentElement.classList.add('js');
+// ============================================
+// APPARITIONS AU SCROLL
+// Branchées en premier : si la suite du script plante, le contenu apparaît quand même.
+// Sans IntersectionObserver, pas de classe js, donc rien n'est masqué.
+// ============================================
+if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
 
 // ============================================
 // DONNÉES DE TOURNÉE
@@ -81,7 +99,7 @@ function renderTour(upcoming) {
 }
 
 // ============================================
-// HÉROS : compteur, prochaine date, « À ne pas rater », barre mobile
+// HÉROS : compteur, prochaine date, « Et aussi », barre mobile
 // ============================================
 function renderHeroDates(upcoming) {
     const count = document.getElementById('hero-count');
@@ -115,9 +133,9 @@ function renderHeroDates(upcoming) {
     barLink.target = next.complet ? '' : '_blank';
     bar.hidden = false;
 
-    const featured = Tour.groupFeatured(upcoming)[0];
+    const featured = Tour.featuredLine(upcoming);
     if (featured) {
-        featuredLine.innerHTML = `Et aussi <strong>${featured.venue}, ${featured.city}</strong>, les ${Tour.formatDays(featured.dates)}`;
+        featuredLine.innerHTML = `Et aussi <strong>${featured.venue}, ${featured.city}</strong>, ${featured.when}`;
         featuredLine.hidden = false;
     } else {
         featuredLine.hidden = true;
@@ -174,20 +192,6 @@ const mobileBar = document.getElementById('mobile-bar');
 new IntersectionObserver(([entry]) => {
     mobileBar.classList.toggle('is-visible', !entry.isIntersecting);
 }).observe(document.getElementById('hero'));
-
-// ============================================
-// APPARITIONS AU SCROLL
-// ============================================
-const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ============================================
 // NEWSLETTER (pas encore branchée sur un service)

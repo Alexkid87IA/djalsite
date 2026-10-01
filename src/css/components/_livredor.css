@@ -1,88 +1,65 @@
 /* ============================================
-   LIVRE D'OR
+   LIVRE D'OR (aussi utilisé par livredor.html)
 ============================================ */
-.section-livredor {
-    background: #000;
-}
-
 .livredor-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 20px;
 }
 
-
 .livredor-item {
-    background: rgba(255,255,255,0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 2rem;
-    transition: all 0.4s ease;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
+    padding: 56px 28px 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
 }
 
-.livredor-item:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(233,30,140,0.3);
-    transform: translateY(-4px);
+.livredor-item::before {
+    content: '“';
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    font-family: var(--display);
+    font-size: 4.5rem;
+    line-height: 1;
+    color: var(--pink);
 }
 
 .livredor-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--gray-200);
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.livredor-text::before {
-    content: '"';
-    display: none;
+    color: rgba(255,255,255,0.85);
 }
 
 .livredor-author {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
 }
 
 .livredor-name {
     font-weight: 700;
-    color: var(--light);
-    font-size: 0.95rem;
 }
 
 .livredor-date {
-    font-size: 0.8rem;
-    color: var(--gray-400);
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .livredor-more {
+    margin-top: 32px;
     text-align: center;
-    margin-top: 3rem;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .livredor-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media (max-width: 900px) {
+    .livredor-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .livredor-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .livredor-item {
-        padding: 1.5rem;
-    }
+    .livredor-grid { grid-template-columns: 1fr; }
 }

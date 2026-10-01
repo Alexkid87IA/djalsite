@@ -196,14 +196,16 @@
         min-height: auto;
     }
 
+    /* svh = hauteur visible entre les barres du navigateur mobile */
     .hero-poster {
         order: -1;
-        height: 78vh;
-        min-height: 520px;
+        height: 54vh;
+        height: 54svh;
+        min-height: 300px;
     }
 
     .hero-poster img {
-        object-position: center 30%;
+        object-position: center 25%;
     }
 
     .hero-poster::after {
@@ -214,13 +216,13 @@
 
     .hero-content {
         padding: 0 16px 48px;
-        margin-top: -90px;
+        margin-top: -8px;
     }
 
-    .hero-tag { margin-bottom: 18px; font-size: 0.68rem; }
-    .hero-title { font-size: clamp(3.4rem, 18vw, 5.5rem); margin-right: 0; }
-    .hero-sub { margin-top: 24px; font-size: 1rem; }
-    .hero-actions { flex-direction: column; margin-top: 26px; }
+    .hero-tag { margin-bottom: 12px; font-size: 0.68rem; }
+    .hero-title { font-size: clamp(2.8rem, 13vw, 4.5rem); margin-right: 0; }
+    .hero-sub { margin-top: 16px; font-size: 1rem; }
+    .hero-actions { flex-direction: column; margin-top: 20px; }
     .hero-actions .btn { padding: 16px 18px; }
     .next-date { margin-top: 32px; gap: 16px; padding: 16px; }
     .next-date-day { font-size: 2.2rem; }

@@ -47,7 +47,11 @@ Uniquement des apparitions au scroll (fondu + léger décalage vertical) via `In
 ## Structure de la page (ordre final)
 
 1. **Nav** — logo à gauche, 5 liens (Spectacle, Tournée, Vidéos, Presse, Livre d'or), bouton rose « Billets » toujours visible (ancre `#tournee`). Les icônes réseaux sociaux sont retirées de la nav (elles restent dans le menu mobile et le footer). Menu burger sur mobile, comportement JS actuel conservé.
-2. **Héros** — image `hero.jpg` plein écran. Étiquette « Tournée 2026 », titre Anton géant « EN PLEINE / CONSCIENCE », sous-titre « Le nouveau spectacle de D'JAL », bouton « Réserver mes places ». Encart « Prochaine date » (jour, ville, salle + lien billetterie) rempli par le JS à partir de la première date à venir ; masqué s'il n'y a aucune date.
+2. **Héros** — validé sur maquette (`mockups/hero.html`, jetable). `hero.jpg` est une affiche verticale qui contient déjà « D'JAL » et « En pleine conscience » : elle est affichée telle quelle, sans texte par-dessus.
+   - Desktop : grille 2 colonnes (≈ 57 % / 43 %). Gauche : étiquette bleue « Tournée 2026 · N dates » (N calculé), titre Anton géant « EN PLEINE / CONSCIENCE » souligné d'un trait dégradé rose→bleu (le titre déborde légèrement sur l'affiche), sous-titre « Le nouveau spectacle de D'JAL. Toujours à cent à l'heure, toujours déjanté. », boutons « Réserver mes places » (rose, vers `#tournee`) et « Extraits » (contour, vers `#extraits`). Droite : affiche en `object-fit: cover`, fondue dans le noir à gauche et en bas.
+   - Encart « Prochaine date » (jour en Anton, mois en rose, ville, salle, lien « Billets → » vers la billetterie) rempli par le JS avec la première date à venir ; masqué s'il n'y a aucune date.
+   - Ligne « À ne pas rater » : générée à partir des dates `featured: true` à venir (même salle regroupée, ex. « Le Grand Rex, Paris — 30 & 31 octobre ») ; masquée s'il n'y en a pas.
+   - Mobile (< 900px) : affiche en haut (≈ 78vh), contenu en dessous qui remonte sur le fondu, boutons empilés pleine largeur. Barre fixe en bas « Prochaine date : JJ mois · Ville » + bouton « Billets », **affichée uniquement une fois le héros dépassé** au scroll.
 3. **Chiffres clés** (nouveau bandeau) — 3 chiffres tirés du texte existant :
    - « 20 M+ » — vues du « Portugais »
    - « 200+ » — représentations
@@ -68,7 +72,7 @@ Uniquement des apparitions au scroll (fondu + léger décalage vertical) via `In
 - Réécriture du HTML de `index.html` (structure ci-dessus) et du CSS de chaque composant.
 - `_variables.css` : remplacé par les nouveaux tokens.
 - Nouveau fichier `src/css/components/_stats.css` pour le bandeau chiffres clés. `_contact.css` et `_instagram.css` fusionnés dans `_communaute.css` si les classes ne sont plus utilisées.
-- `main.js` : ajout (1) de l'encart « Prochaine date », (2) du bouton « Voir toutes les dates », (3) des apparitions au scroll. Les données `tourDates` ne changent pas. Le reste du JS (nav, menu mobile, smooth scroll, newsletter) est conservé.
+- `main.js` : ajout (1) de l'encart « Prochaine date », de la ligne « À ne pas rater » et du compteur « N dates », (2) de la barre fixe mobile (affichée après le héros), (3) du bouton « Voir toutes les dates », (4) des apparitions au scroll. Les données `tourDates` ne changent pas. Le reste du JS (nav, menu mobile, smooth scroll, newsletter) est conservé.
 - **Pages secondaires** : `biographie.html` et `livredor.html` partagent `main.css`, la nav (`.nav-wrapper`) et le footer (`.footer`). Les classes de nav et de footer sont conservées pour qu'elles héritent du nouveau style sans modification de leur HTML. Leur contenu n'est pas modifié ; on vérifie seulement qu'elles s'affichent correctement.
 
 ## Hors périmètre

@@ -117,7 +117,7 @@ function renderHeroDates(upcoming) {
 
     const featured = Tour.groupFeatured(upcoming)[0];
     if (featured) {
-        featuredLine.innerHTML = `<em>À ne pas rater</em><strong>${featured.venue}, ${featured.city}</strong> — ${Tour.formatDays(featured.dates)}`;
+        featuredLine.innerHTML = `Et aussi <strong>${featured.venue}, ${featured.city}</strong>, les ${Tour.formatDays(featured.dates)}`;
         featuredLine.hidden = false;
     } else {
         featuredLine.hidden = true;

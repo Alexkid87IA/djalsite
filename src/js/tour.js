@@ -1,5 +1,5 @@
 /* ============================================
-   TOURNÉE — fonctions sans DOM
+   TOURNÉE : fonctions sans DOM
    Utilisées par main.js (objet global Tour)
    et testées avec : node --test tests/
 ============================================ */

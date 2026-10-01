@@ -17,3 +17,4 @@ node_modules/
 # Build (if added later)
 dist/
 build/
+.vercel

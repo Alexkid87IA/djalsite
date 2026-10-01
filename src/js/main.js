@@ -1,10 +1,12 @@
 /* ============================================
    DJAL - EN PLEINE CONSCIENCE
-   Main JavaScript
+   Main JavaScript (nécessite tour.js avant)
 ============================================ */
 
+document.documentElement.classList.add('js');
+
 // ============================================
-// TOUR DATES DATA & FILTERING
+// DONNÉES DE TOURNÉE
 // ============================================
 const tourDates = [
     { date: '2026-01-23', day: '23', month: 'Jan', venue: 'Carré des Docks', city: 'Le Havre', url: 'https://www.ticketmaster.fr/fr/manifestation/d-jal-billet/idmanif/587519' },
@@ -52,213 +54,148 @@ const tourDates = [
 
 const MAX_DATES_SHOWN = 6;
 
-function getUpcomingDates() {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+// ============================================
+// TOURNÉE
+// ============================================
+function renderTour(upcoming) {
+    const list = document.getElementById('tournee-list');
+    const moreBtn = document.getElementById('tournee-more');
+    if (!list) return;
 
-    return tourDates
-        .filter(item => new Date(item.date) >= today)
-        .slice(0, MAX_DATES_SHOWN);
-}
-
-function renderTourDates() {
-    const container = document.getElementById('tournee-list');
-    if (!container) return;
-
-    const upcomingDates = getUpcomingDates();
-
-    if (upcomingDates.length === 0) {
-        container.innerHTML = '<p class="tournee-empty">Aucune date à venir pour le moment.</p>';
+    if (upcoming.length === 0) {
+        list.innerHTML = '<p class="tour-empty">Aucune date à venir pour le moment.</p>';
+        moreBtn.hidden = true;
         return;
     }
 
-    container.innerHTML = upcomingDates.map(item => {
-        const classes = ['tournee-item'];
-        if (item.featured) classes.push('featured');
-        if (item.complet) classes.push('complet');
+    list.innerHTML = upcoming.map(Tour.renderTourRow).join('');
+    const rows = list.querySelectorAll('.tour-row');
+    rows.forEach((row, i) => { row.hidden = i >= MAX_DATES_SHOWN; });
 
-        const btn = item.complet
-            ? '<span class="tournee-btn disabled">Complet</span>'
-            : `<a href="${item.url}" target="_blank" rel="noopener" class="tournee-btn">Réserver</a>`;
-
-        return `
-            <div class="${classes.join(' ')}">
-                <div class="tournee-date">
-                    <span class="day">${item.day}</span>
-                    <span class="month">${item.month}</span>
-                </div>
-                <div class="tournee-info">
-                    <span class="venue">${item.venue}</span>
-                    <span class="city">${item.city}</span>
-                </div>
-                ${btn}
-            </div>
-        `;
-    }).join('');
+    moreBtn.hidden = upcoming.length <= MAX_DATES_SHOWN;
+    moreBtn.textContent = `Voir toutes les dates (${upcoming.length})`;
+    moreBtn.onclick = () => {
+        rows.forEach(row => { row.hidden = false; });
+        moreBtn.hidden = true;
+    };
 }
 
-// Initialize tour dates on page load
-document.addEventListener('DOMContentLoaded', renderTourDates);
+// ============================================
+// HÉROS : compteur, prochaine date, « À ne pas rater », barre mobile
+// ============================================
+function renderHeroDates(upcoming) {
+    const count = document.getElementById('hero-count');
+    const card = document.getElementById('next-date');
+    const featuredLine = document.getElementById('featured-date');
+    const bar = document.getElementById('mobile-bar');
+
+    const n = upcoming.length;
+    count.textContent = n > 0 ? `Tournée 2026 · ${n} date${n > 1 ? 's' : ''}` : 'Tournée 2026';
+
+    if (n === 0) {
+        card.hidden = true;
+        featuredLine.hidden = true;
+        bar.hidden = true;
+        return;
+    }
+
+    const next = upcoming[0];
+    document.getElementById('next-date-day').textContent = next.day;
+    document.getElementById('next-date-month').textContent = next.month;
+    document.getElementById('next-date-city').textContent = next.city;
+    document.getElementById('next-date-venue').textContent = next.venue;
+    card.href = next.complet ? '#tournee' : next.url;
+    card.target = next.complet ? '' : '_blank';
+    card.hidden = false;
+
+    document.getElementById('mobile-bar-date').textContent = `Prochaine date : ${next.day} ${next.month.toLowerCase()}`;
+    document.getElementById('mobile-bar-city').textContent = next.city;
+    const barLink = document.getElementById('mobile-bar-link');
+    barLink.href = next.complet ? '#tournee' : next.url;
+    barLink.target = next.complet ? '' : '_blank';
+    bar.hidden = false;
+
+    const featured = Tour.groupFeatured(upcoming)[0];
+    if (featured) {
+        featuredLine.innerHTML = `<em>À ne pas rater</em><strong>${featured.venue}, ${featured.city}</strong> — ${Tour.formatDays(featured.dates)}`;
+        featuredLine.hidden = false;
+    } else {
+        featuredLine.hidden = true;
+    }
+}
+
+const upcomingDates = Tour.getUpcomingDates(tourDates, new Date());
+renderTour(upcomingDates);
+renderHeroDates(upcomingDates);
 
 // ============================================
 // NAVIGATION
 // ============================================
 const navWrapper = document.getElementById('nav-wrapper');
-
-const handleNavScroll = () => {
-    if (window.scrollY > 50) {
-        navWrapper.classList.add('scrolled');
-    } else {
-        navWrapper.classList.remove('scrolled');
-    }
-};
-
-window.addEventListener('scroll', handleNavScroll);
-
-// Mobile menu toggle
 const navToggle = document.getElementById('nav-toggle');
 const navMobile = document.getElementById('nav-mobile');
 
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMobile.classList.toggle('open');
-    document.body.classList.toggle('menu-open');
-});
+window.addEventListener('scroll', () => {
+    navWrapper.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 
-// Close mobile menu on link click
-document.querySelectorAll('.nav-mobile-link, .nav-mobile-cta').forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMobile.classList.remove('open');
-        document.body.classList.remove('menu-open');
-    });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// ============================================
-// INSTAGRAM REELS CAROUSEL
-// ============================================
-function initReelsCarousel() {
-    const carousel = document.getElementById('reels-carousel');
-    const prevBtn = document.querySelector('.reels-nav-prev');
-    const nextBtn = document.querySelector('.reels-nav-next');
-    const dotsContainer = document.getElementById('reels-dots');
-
-    if (!carousel) return;
-
-    const items = carousel.querySelectorAll('.reel-item');
-    const itemCount = items.length;
-    let currentIndex = 1; // Start at second card to show peek on left
-
-    // Create dots
-    if (dotsContainer) {
-        for (let i = 0; i < itemCount; i++) {
-            const dot = document.createElement('button');
-            dot.classList.add('reels-dot');
-            if (i === 1) dot.classList.add('active');
-            dot.addEventListener('click', () => scrollToIndex(i));
-            dotsContainer.appendChild(dot);
-        }
-    }
-
-    const dots = dotsContainer ? dotsContainer.querySelectorAll('.reels-dot') : [];
-
-    function updateDots() {
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
-    }
-
-    function scrollToIndex(index, smooth = true) {
-        currentIndex = Math.max(0, Math.min(index, itemCount - 1));
-        const item = items[currentIndex];
-        if (!item) return;
-
-        // Get the computed gap
-        const style = getComputedStyle(carousel);
-        const gap = parseFloat(style.gap) || 20;
-
-        // Calculate scroll position to center the current card with peek on sides
-        const itemWidth = item.offsetWidth;
-        const scrollLeft = item.offsetLeft - (carousel.offsetWidth - itemWidth) / 2;
-
-        carousel.scrollTo({ left: Math.max(0, scrollLeft), behavior: smooth ? 'smooth' : 'auto' });
-        updateDots();
-    }
-
-    // Calculate current index from scroll position
-    function updateCurrentIndex() {
-        const scrollLeft = carousel.scrollLeft;
-        const itemWidth = items[0].offsetWidth;
-        const style = getComputedStyle(carousel);
-        const gap = parseFloat(style.gap) || 20;
-
-        currentIndex = Math.round(scrollLeft / (itemWidth + gap));
-        currentIndex = Math.max(0, Math.min(currentIndex, itemCount - 1));
-        updateDots();
-    }
-
-    // Navigation buttons
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            scrollToIndex(currentIndex - 1);
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            scrollToIndex(currentIndex + 1);
-        });
-    }
-
-    // Update dots on scroll
-    let scrollTimeout;
-    carousel.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(updateCurrentIndex, 100);
-    });
-
-    // Keyboard navigation
-    carousel.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') scrollToIndex(currentIndex - 1);
-        if (e.key === 'ArrowRight') scrollToIndex(currentIndex + 1);
-    });
-
-    // Initial scroll to show peek on left (after layout is ready)
-    setTimeout(() => {
-        // Scroll so first card is partially visible on left
-        const firstItem = items[0];
-        if (firstItem) {
-            const peekAmount = firstItem.offsetWidth * 0.7; // Show 30% of first card
-            carousel.scrollTo({ left: peekAmount, behavior: 'auto' });
-        }
-    }, 150);
+function setMenu(open) {
+    navToggle.classList.toggle('active', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navMobile.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
 }
 
-document.addEventListener('DOMContentLoaded', initReelsCarousel);
+navToggle.addEventListener('click', () => setMenu(!navMobile.classList.contains('open')));
+
+navMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setMenu(false));
+});
 
 // ============================================
-// NEWSLETTER
+// REELS : flèches
+// ============================================
+const reelsTrack = document.getElementById('reels-track');
+
+function scrollReels(direction) {
+    const reel = reelsTrack.querySelector('.reel');
+    const gap = parseFloat(getComputedStyle(reelsTrack).columnGap) || 0;
+    reelsTrack.scrollBy({ left: direction * (reel.offsetWidth + gap), behavior: 'smooth' });
+}
+
+document.querySelector('.reels-prev').addEventListener('click', () => scrollReels(-1));
+document.querySelector('.reels-next').addEventListener('click', () => scrollReels(1));
+
+// ============================================
+// BARRE MOBILE : visible une fois le héros dépassé
+// ============================================
+const mobileBar = document.getElementById('mobile-bar');
+
+new IntersectionObserver(([entry]) => {
+    mobileBar.classList.toggle('is-visible', !entry.isIntersecting);
+}).observe(document.getElementById('hero'));
+
+// ============================================
+// APPARITIONS AU SCROLL
+// ============================================
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ============================================
+// NEWSLETTER (pas encore branchée sur un service)
 // ============================================
 const newsletterForm = document.getElementById('newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = newsletterForm.querySelector('input[type="email"]').value;
-        alert('Merci pour votre inscription !');
-        newsletterForm.reset();
-    });
-}
+
+newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Merci pour votre inscription !');
+    newsletterForm.reset();
+});

@@ -1,41 +1,67 @@
 /* ============================================
-   BUTTONS
+   BOUTONS
 ============================================ */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    gap: 10px;
+    padding: 18px 30px;
     border-radius: 100px;
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 .btn-primary {
-    background: var(--gradient);
-    color: var(--light);
-    box-shadow: 0 4px 20px var(--pink-glow);
+    background: var(--pink);
+    color: #fff;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px var(--pink-glow);
+    box-shadow: 0 10px 30px rgba(233,30,140,0.35);
 }
 
-.btn-secondary {
+.btn-ghost {
+    border-color: var(--line);
     background: transparent;
-    color: var(--gray-100);
-    border: 2px solid var(--gray-400);
+    color: var(--text);
 }
 
-.btn-secondary:hover {
-    border-color: var(--light);
-    background: var(--gray-600);
+.btn-ghost:hover {
+    border-color: var(--text);
+}
+
+/* Petit bouton rose « Billets » (nav, lignes de tournée, barre mobile) */
+.btn-tickets,
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 100px;
+    background: var(--pink);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-tickets:hover,
+.nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(233,30,140,0.35);
 }

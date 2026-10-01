@@ -3,33 +3,31 @@
 ============================================ */
 :root {
     /* Couleurs */
+    --bg: #000;
+    --bg-alt: #0d0d0d;
     --pink: #e91e8c;
     --blue: #2d7dd2;
-    --dark: #000;
-    --darker: #000;
-    --light: #ffffff;
+    --text: #fff;
+    --text-muted: rgba(255,255,255,0.6);
+    --line: rgba(255,255,255,0.12);
+    --surface: rgba(255,255,255,0.03);
 
-    /* Gris (opacités) */
-    --gray-100: rgba(255,255,255,0.9);
+    /* Typo */
+    --display: 'Anton', Impact, sans-serif;
+    --body: 'Inter', system-ui, sans-serif;
+
+    /* Mise en page */
+    --nav-height: 80px;
+    --container-width: 1240px;
+    --gutter: clamp(16px, 4vw, 40px);
+    --section-padding: clamp(72px, 10vw, 128px);
+    --radius: 16px;
+    --transition: 0.25s ease;
+
+    /* Alias utilisés par biographie.html et livredor.html */
+    --dark: var(--bg);
+    --darker: var(--bg-alt);
+    --light: var(--text);
     --gray-200: rgba(255,255,255,0.7);
     --gray-300: rgba(255,255,255,0.5);
-    --gray-400: rgba(255,255,255,0.3);
-    --gray-500: rgba(255,255,255,0.1);
-    --gray-600: rgba(255,255,255,0.05);
-
-    /* Glows */
-    --pink-glow: rgba(233,30,140,0.4);
-    --blue-glow: rgba(45,125,210,0.4);
-
-    /* Gradients */
-    --gradient: linear-gradient(135deg, var(--pink), var(--blue));
-    --gradient-reverse: linear-gradient(135deg, var(--blue), var(--pink));
-
-    /* Spacing */
-    --nav-height: 80px;
-    --section-padding: 100px;
-    --container-width: 1200px;
-
-    /* Transitions */
-    --transition: 0.3s ease;
 }

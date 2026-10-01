@@ -22,6 +22,7 @@
 @import 'components/_presse.css';
 @import 'components/_livredor.css';
 @import 'components/_communaute.css';
+@import 'components/_page.css';
 
 /* Footer */
 @import 'layout/_footer.css';

@@ -4,9 +4,9 @@ const vm = require('node:vm');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const mainSource = fs.readFileSync(path.join(__dirname, '../src/js/main.js'), 'utf8');
+const commonPath = path.join(__dirname, '../src/js/common.js');
 
-// Faux DOM minimal : assez pour exécuter le début de main.js
+// Faux DOM minimal : assez pour exécuter le début de common.js
 function makeContext({ withObserver }) {
     const observed = [];
     const htmlClasses = new Set();
@@ -28,16 +28,20 @@ function makeContext({ withObserver }) {
     return { context, observed, htmlClasses };
 }
 
-test('les .reveal sont observés même si tour.js ne charge pas', () => {
+function run(context) {
+    // La nav n'existe pas dans le faux DOM : le script plante après les apparitions
+    try { vm.runInNewContext(fs.readFileSync(commonPath, 'utf8'), context); } catch (e) { /* attendu */ }
+}
+
+test('common.js observe les .reveal avant tout code qui peut planter', () => {
     const { context, observed, htmlClasses } = makeContext({ withObserver: true });
-    // Tour est absent : main.js plante, mais après avoir branché les apparitions
-    assert.throws(() => vm.runInNewContext(mainSource, context));
+    run(context);
     assert.ok(htmlClasses.has('js'));
     assert.equal(observed.length, 2);
 });
 
 test('sans IntersectionObserver, html.js n\'est pas posé (contenu visible)', () => {
     const { context, htmlClasses } = makeContext({ withObserver: false });
-    try { vm.runInNewContext(mainSource, context); } catch (e) { /* Tour absent */ }
+    run(context);
     assert.equal(htmlClasses.has('js'), false);
 });

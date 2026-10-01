@@ -262,7 +262,7 @@
         color: var(--text);
     }
 
-    body {
+    body:has(.mobile-bar) {
         padding-bottom: 84px; /* la barre ne cache pas le footer */
     }
 }

@@ -171,6 +171,20 @@ navMobile.querySelectorAll('a').forEach(link => {
 });
 
 // ============================================
+// VIDÉO AVEC MINIATURE : le lecteur YouTube se charge au clic
+// ============================================
+document.querySelectorAll('.video-facade').forEach(button => {
+    button.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${button.dataset.youtube}?autoplay=1`;
+        iframe.title = button.getAttribute('aria-label');
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        button.replaceWith(iframe);
+    });
+});
+
+// ============================================
 // REELS : flèches
 // ============================================
 const reelsTrack = document.getElementById('reels-track');

@@ -218,7 +218,13 @@
                     <p class="section-subtitle">Quelques bons moments passés.</p>
                 </header>
                 <div class="video-grid video-grid-2">
-                    <div class="video-card reveal"><iframe src="https://www.youtube.com/embed/xsIcbGitiuw" title="D'JAL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="video-card reveal">
+                        <!-- Vidéo ancienne sans miniature HD : on affiche la miniature standard, le lecteur se charge au clic -->
+                        <button class="video-facade" data-youtube="xsIcbGitiuw" aria-label="Lire la vidéo D'JAL - Apoucalypche">
+                            <img src="https://i.ytimg.com/vi/xsIcbGitiuw/hqdefault.jpg" alt="" loading="lazy">
+                            <span class="video-facade-play"><svg><use href="#i-play"/></svg></span>
+                        </button>
+                    </div>
                     <div class="video-card reveal"><iframe src="https://www.youtube.com/embed/I19SwXcfRmM" title="D'JAL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div class="video-card reveal"><iframe src="https://www.youtube.com/embed/6BUfTCXEuww" title="D'JAL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div class="video-card reveal"><iframe src="https://www.youtube.com/embed/OBn3VVtJvNo" title="D'JAL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
